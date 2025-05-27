@@ -8,4 +8,8 @@
     <Folder Include="Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="../WebApiInvoice.Domain/WebApiInvoice.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

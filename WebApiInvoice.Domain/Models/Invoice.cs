@@ -8,5 +8,6 @@ namespace WebApiInvoice.Domain.Models
 {
     public class Invoice
     {
+        public int Id { get; set; }
     }
 }
