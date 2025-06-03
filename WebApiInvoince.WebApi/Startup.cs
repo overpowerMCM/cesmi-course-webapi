@@ -2,6 +2,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Builder;
+using WebApiInvoice.DataAccessLayer;
 
 public class Startup
 {
@@ -15,7 +16,7 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers(); // Or AddRazorPages(), etc.
-        //services.AddDataAccessLayer();
+        services.AddDataAccessLayer();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
