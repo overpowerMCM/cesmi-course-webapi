@@ -16,7 +16,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiInvoice.DataAccessMoc
 		{F932F66A-C2A3-4AB8-BE49-1C819AF13E0C} = {F932F66A-C2A3-4AB8-BE49-1C819AF13E0C}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiInvoince.WebApi", "WebApiInvoince.WebApi\WebApiInvoince.WebApi.csproj", "{8BFAEA78-0D65-4912-B616-EAC864931D24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiInvoince.WebApi", "WebApiInvoice.WebApi\WebApiInvoice.WebApi.csproj", "{8BFAEA78-0D65-4912-B616-EAC864931D24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
