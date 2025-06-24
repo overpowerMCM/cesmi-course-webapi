@@ -7,7 +7,8 @@ namespace WebApiInvoice.Domain.Interfaces
     public interface IRepositoryBase<tModel>
     { 
         // CRUD + Select 
-        List<tModel> Select( Predicate<tModel> model, int offset = 0, int limit = 0);
+        List<tModel> Get( int offset = 0, int limit = 0 );
+        tModel GetById(int id);
         int Create(tModel model);
         int Update(tModel model, int id);
         int Delete(int id);

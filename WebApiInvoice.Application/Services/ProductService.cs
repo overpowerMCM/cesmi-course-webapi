@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebApiInvoice.Application.Interfaces;
 using WebApiInvoice.Domain.Interfaces;
 using WebApiInvoice.Domain.Models;
 
 namespace WebApiInvoice.Application.Services
 {
-    public class ProductService
+
+    public class ProductService : IProductService
     {
-        IProductRepository _repository;
+        readonly IProductRepository _repository;
         public ProductService(IProductRepository repository)
         {
             _repository = repository;
@@ -43,12 +45,12 @@ namespace WebApiInvoice.Application.Services
         {
             if (id == 0) return null;
 
-            return _repository.Select(p => p.Id == id).FirstOrDefault();
+            return _repository.GetById(id); 
         }
 
         public List<Product> SelectAll()
         {
-            return _repository.Select(p => true);
+            return _repository.Get();
         }
 
 
