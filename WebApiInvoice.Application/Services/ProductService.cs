@@ -45,12 +45,12 @@ namespace WebApiInvoice.Application.Services
         {
             if (id == 0) return null;
 
-            return _repository.Select(p => p.Id == id).FirstOrDefault();
+            return _repository.GetById(id); 
         }
 
         public List<Product> SelectAll()
         {
-            return _repository.Select(p => true);
+            return _repository.Get();
         }
 
 

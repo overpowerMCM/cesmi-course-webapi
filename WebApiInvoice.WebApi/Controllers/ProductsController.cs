@@ -19,17 +19,43 @@ namespace WebApiInvoince.WebApi.Controllers
             _service = service;
         }
 
+        [HttpGet]
+        public List<Product> GetAll()
+        {
+            return _service.SelectAll();
+        }
+
         /// <summary>
         /// Obtener un producto x id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public Product GetById(int id)
+        [ProducesResponseType(typeof(Product), StatusCodes.Status200OK)]
+        public IActionResult GetById(int id)
         {
-            return _service.SelectById(id);
+            return new OkObjectResult(_service.SelectById(id));
         }
-        
-       
+
+        [HttpPost]
+        [ProducesResponseType(typeof(Product), StatusCodes.Status201Created)]
+        public IActionResult CreateProduct(Product product)
+        {
+            return new CreatedResult("default", _service.Add(product));
+        }
+
+        [HttpDelete("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public IActionResult DeleteProduct(int id)
+        {
+            return new OkObjectResult(_service.Delete(id));
+        }
+
+        [HttpPut]
+        [ProducesResponseType(typeof(bool),StatusCodes.Status200OK)]
+        public IActionResult UpdateProduct (Product model)
+        {
+            return new OkObjectResult(_service.Update( model));
+        }
     }
 }
