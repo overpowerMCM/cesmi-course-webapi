@@ -10,5 +10,7 @@ namespace WebApiInvoice.Domain.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Ciudad { get; set; }
+
+        public string Telefono { get; set; }
     }
 }
