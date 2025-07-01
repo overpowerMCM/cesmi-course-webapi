@@ -12,6 +12,6 @@ namespace WebApiInvoice.Domain.Models
         public string Ciudad { get; set; }
 
         public string Telefono { get; set; }
-        public int CodogoPostal { get; set; }
+        public int CodigoPostal { get; set; }
     }
 }
